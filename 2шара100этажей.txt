@@ -1,0 +1,37 @@
+public static void main(String[] args) {
+        int bestKol = 0;
+        for (int StageOfBoom = 1; StageOfBoom <= 100; StageOfBoom++)
+        {        
+         Boolean ballOne = true; 
+         Boolean ballTwo = true; 
+         
+         int step = 7;
+         //int StageOfBallBoom = 100;
+         
+        int Stage = step;
+        int kol = 0;
+        while (ballOne)
+        {
+            if (Stage >= StageOfBoom)  ballOne = false;
+            else Stage += step;
+            //System.out.println(Stage);
+            kol++;
+        }
+        Stage -=step;
+        kol--;
+        while (ballTwo)
+        {
+            if (Stage == StageOfBoom)  ballTwo = false;
+            else Stage++;
+            //System.out.println(Stage);
+            kol++;
+        }
+        if (bestKol < kol) bestKol = kol;
+        
+        //launch(DesktopApplication3.class, args);
+         // System.out.println("этаж на котором шар разобъется: " + Stage);  
+            // System.out.println("попыток " + kol);
+        
+        }
+        System.out.println("наибольшее количество попыток: " + bestKol);
+    }
